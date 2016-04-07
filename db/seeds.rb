@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+5.times do
+  User.create!(name: Faker::Name.name)
+  rand(1..10).times do
+    Post.create!(title: Faker::Hipster.sentence(3, false, 4), body: Faker::Hipster.paragraph(2, false, 8))
+  end
+end
