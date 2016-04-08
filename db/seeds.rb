@@ -8,8 +8,8 @@
 
 
 5.times do
-  User.create!(name: Faker::Name.name)
+  user = User.create!(name: Faker::Name.name)
   rand(1..10).times do
-    Post.create!(title: Faker::Hipster.sentence(3, false, 4), body: Faker::Hipster.paragraph(2, false, 8))
+    Post.create!(title: Faker::Hipster.sentence(3, false, 4), body: Faker::Hipster.paragraph(2, false, 8), user_id: user.id)
   end
 end
